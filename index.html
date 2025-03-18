@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Saya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="nama">Isma Rapmaria Silitonga</h1>
+        <p class="job-title">Web Developer | Dibimbing.id</p>
+    </header>
+    
+    <section id="slide1" class="slide active">
+        <h2 class="tentang-saya">TENTANG SAYA</h2>
+        <table class="about-table">
+            <tr><td>Saya mahasiswa dari Politeknik Negeri Batam.</td></tr>
+            <tr><td>Jurusan Teknik Informatika</td></tr>
+            <tr><td>Memiliki pengalaman dalam berorganisasi dan aktif berpartisipasi, selalu berusaha untuk beradaptasi dan berkolaborasi dalam tim.</td></tr>
+        </table>
+    
+        <h2>PROYEK</h2>
+        <table class="project-table">
+            <tr>
+                <th>Nama Proyek</th>
+                <td>
+                    Project Based Learning<br>
+                    Berikut judul dari proyek yang pernah saya ikuti:
+                    <ul>
+                        <li>Foodify GO - Website Development Project</li>
+                        <li>Beauty Product - Website Development Project</li>
+                        <li>Guide Me - Mobile Application Development Project</li>
+                        <li>Geoportal Perkimtan - Mobile Application Development Project</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Deskripsi</th>
+                <td>Selama menjadi mahasiswa, saya dengan tim PBL pernah mengerjakan website dan aplikasi mobile.</td>
+            </tr>
+        </table>
+    </section>
+    
+    <section id="slide2" class="slide">
+        <h2>DETAIL PRIBADI</h2>
+        <table>
+            <tr>
+                <th>Informasi</th>
+                <th>Detail</th>
+            </tr>
+            <tr>
+                <td>Tanggal Lahir</td>
+                <td>29 April 2005</td>
+            </tr>
+            <tr>
+                <td>Jenis Kelamin</td>
+                <td>Perempuan</td>
+            </tr>
+            <tr>
+                <td>Kewarganegaraan</td>
+                <td>Indonesia</td>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <td>Batam, Kepulauan Riau</td>
+            </tr>
+        </table>
+    </section>
+    
+    <section id="slide3" class="slide">
+        <h2>ADDITIONAL INFORMATION</h2>
+        <table>
+            <tr>
+                <th>Skills</th>
+                <td>
+                    <ul>
+                        <li>Basic proficiency in Microsoft Excel</li>
+                        <li>Proficient in Microsoft Word, Figma</li>
+                        <li>Time management skills</li>
+                        <li>Able to build good team relationships</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </section>
+    
+    <div class="navigation">
+        <button onclick="prevSlide()">Previous</button>
+        <button onclick="nextSlide()">Next</button>
+    </div>
+    
+    <script>
+        let currentSlide = 1;
+        let totalSlides = 3;
+
+        function showSlide(slideNumber) {
+            document.querySelectorAll('.slide').forEach(slide => {
+                slide.classList.remove('active');
+            });
+            document.getElementById(`slide${slideNumber}`).classList.add('active');
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+    </script>
+</body>
+</html>
